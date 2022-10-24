@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: c27001
+  labels:
+    tier: c27001
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      tier: c27001
+  template:
+    metadata:
+      name: c27001-assignment1
+      labels:
+        tier: c27001-a1
+    spec:
+      containers:
+      - name: c270-assignment
+        image: iamharoon/c27001:latest
+        ports:
+        - containerPort: 8081
